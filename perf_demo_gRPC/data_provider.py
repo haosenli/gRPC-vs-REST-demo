@@ -1,4 +1,3 @@
-import os
 import time
 
 DATA_SIZE = 1000000
