@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package data_service;
+
+service DataService {
+  	rpc GetData (DataRequest) returns (DataResponse);
+}
+
+message DataRequest {
+  	int32 count = 1;
+}
+
+message DataItem {
+	int32 id = 1;
+	string name = 2;
+	string description = 3;
+}
+
+message DataResponse {
+	repeated DataItem data = 1;
+}
+
+// python -m grpc_tools.protoc -I. --python_out=. --grpc_python_out=. data_service.proto
